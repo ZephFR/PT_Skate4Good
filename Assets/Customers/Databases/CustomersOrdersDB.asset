@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f591de704c41242ae8b93c30da12bb, type: 3}
   m_Name: CustomersOrdersDB
   m_EditorClassIdentifier: 
-  datas: []
+  datas:
+  - name: Bob
+    order: "La planche la plus styl\xE9e possible"
+    Wheels: 0
+    Board: 0
+    Grip: 0

@@ -21,7 +21,7 @@ public class CustomerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         Debug.Log(pointsIndex);
         if (pointsIndex == 2)
@@ -49,5 +49,5 @@ public class CustomerBehaviour : MonoBehaviour
             }
 
         }
-    }
+    }*/
 }
