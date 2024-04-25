@@ -9,12 +9,14 @@ public class PlankSpawn : MonoBehaviour
     public Transform PlankSpawnInfo;
     public Transform Truck1Spawn;
     public Transform Truck2Spawn;
+    public Holder Holder;
 
-    private int Clicks;
+    public int BoardID;
+
     // Start is called before the first frame update
     void Start()
     {
-        Clicks = 0;
+        
     }
 
     // Update is called once per frame
@@ -25,13 +27,29 @@ public class PlankSpawn : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Instantiate(Plank, PlankSpawnInfo);
-        Instantiate(Truck, Truck1Spawn);
-        Instantiate(Truck, Truck2Spawn);
-        Debug.Log("Item Has Spawned");
-
-
-        Clicks = Clicks + 1;
-        Debug.Log(Clicks);  
+        if (Holder.CurrentBoard == 0) 
+        { 
+            Holder.Plank = Instantiate(Plank, PlankSpawnInfo);
+            Holder.Truck1 = Instantiate(Truck, Truck1Spawn);
+            Holder.Truck2 = Instantiate(Truck, Truck2Spawn);
+            Debug.Log("Item Has Spawned");
+            Holder.CurrentBoard = BoardID;
+        }
+        else
+        {
+            Destroy(Holder.Plank);
+            Destroy(Holder.Truck1);
+            Destroy(Holder.Truck2);
+            Destroy(Holder.Wheels1);
+            Destroy(Holder.Wheels2);
+            Destroy(Holder.Wheels3);
+            Destroy(Holder.Wheels4);
+                
+            Holder.Plank = Instantiate(Plank, PlankSpawnInfo);
+            Holder.Truck1 = Instantiate(Truck, Truck1Spawn);
+            Holder.Truck2 = Instantiate(Truck, Truck2Spawn);
+            Debug.Log("Item Has Succesfully Been Replaced");
+            Holder.CurrentBoard = BoardID;
+        }
     }
 }
