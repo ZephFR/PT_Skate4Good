@@ -40,10 +40,10 @@ public class PlankSpawn : MonoBehaviour
             Destroy(Holder.Plank);
             Destroy(Holder.Truck1);
             Destroy(Holder.Truck2);
-            Destroy(Holder.Wheels1);
-            Destroy(Holder.Wheels2);
-            Destroy(Holder.Wheels3);
-            Destroy(Holder.Wheels4);
+            Destroy(Holder.WheelRef1);
+            Destroy(Holder.WheelRef2);
+            Destroy(Holder.WheelRef3);
+            Destroy(Holder.WheelRef4);
                 
             Holder.Plank = Instantiate(Plank, PlankSpawnInfo);
             Holder.Truck1 = Instantiate(Truck, Truck1Spawn);

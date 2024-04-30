@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class WheelsSpawn : MonoBehaviour
 {
+    [Header("Données Unique")]
     public GameObject SelectedWheels;
-    public Transform Pos1;
-    public Transform Pos2;
-    public Transform Pos3;
-    public Transform Pos4;
+    public int WheelsID;
+
+    [Header("Référence a Holder")]
     public Holder Holder;
 
-    public int WheelsID;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseDown()
     {
         if (Holder.CurrentBoard == 0)
@@ -33,30 +20,28 @@ public class WheelsSpawn : MonoBehaviour
         else
         {
             if (Holder.CurrentWheels == 0) { 
-                Holder.Wheels1 = Instantiate(SelectedWheels, Pos1);
-                Holder.Wheels2 = Instantiate(SelectedWheels, Pos2);
-                Holder.Wheels3 = Instantiate(SelectedWheels, Pos3);
-                Holder.Wheels4 = Instantiate(SelectedWheels, Pos4);
+                Holder.WheelRef1 = Instantiate(SelectedWheels, Holder.WheelPos1);
+                Holder.WheelRef2 = Instantiate(SelectedWheels, Holder.WheelPos2);
+                Holder.WheelRef3 = Instantiate(SelectedWheels, Holder.WheelPos3);
+                Holder.WheelRef4 = Instantiate(SelectedWheels, Holder.WheelPos4);
                 Holder.CurrentWheels = WheelsID;
                 Debug.Log("Wheels Has Been Spawned");
             }
             else
             {
-                Destroy(Holder.Wheels1);
-                Destroy(Holder.Wheels2);
-                Destroy(Holder.Wheels3);
-                Destroy(Holder.Wheels4);
+                Destroy(Holder.WheelRef1);
+                Destroy(Holder.WheelRef2);
+                Destroy(Holder.WheelRef3);
+                Destroy(Holder.WheelRef4);
+                Debug.Log("Wheels Has Been Destroyed");
 
-                Holder.Wheels1 = Instantiate(SelectedWheels, Pos1);
-                Holder.Wheels2 = Instantiate(SelectedWheels, Pos2);
-                Holder.Wheels3 = Instantiate(SelectedWheels, Pos3);
-                Holder.Wheels4 = Instantiate(SelectedWheels, Pos4);
+                Holder.WheelRef1 = Instantiate(SelectedWheels, Holder.WheelPos1);
+                Holder.WheelRef2 = Instantiate(SelectedWheels, Holder.WheelPos2);
+                Holder.WheelRef3 = Instantiate(SelectedWheels, Holder.WheelPos3);
+                Holder.WheelRef4 = Instantiate(SelectedWheels, Holder.WheelPos4);
                 Holder.CurrentWheels = WheelsID;
                 Debug.Log("Wheels Has Succesfully Been Replaced");
-
             }
         }
-
-        
     }
 }
