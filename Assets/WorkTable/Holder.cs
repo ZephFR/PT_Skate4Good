@@ -12,6 +12,7 @@ public class Holder : MonoBehaviour
     public float Speed;
     public Button button;
     public float nbCommandesRemplies = 0;
+    public CustomerBrain CB;
 
     [Header("Int de repérage")]
     public int CurrentBoard;    //Int pour savoir quelle planche est déjà sélectionnée
@@ -160,6 +161,7 @@ public class Holder : MonoBehaviour
                     WheelRef4.transform.position = Vector3.MoveTowards(WheelRef4.transform.position, EndPosition.transform.position, Speed);
                 }
                 SW.stopInteractions = true;
+                CB.CommandeFinie = true;
             }
             else
             {

@@ -16,9 +16,8 @@ public class DatabaseManager : ScriptableObject
         RequestData newCustomer = new(
             name: "Jack",
             order: "Je veux la planche la plus stylée du game",
-            Wheels: RequestData.WheelsChoices.Cruiser,
-            Board: RequestData.BoardChoices.Popscicle,
-            Grip: RequestData.GripChoices.Stars);
+            Wheels: RequestData.WheelsChoices.Adhérentes,
+            Board: RequestData.BoardChoices.Standard);
             
 
         datas.Add(newCustomer);

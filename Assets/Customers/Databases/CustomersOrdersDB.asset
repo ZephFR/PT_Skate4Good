@@ -17,4 +17,27 @@ MonoBehaviour:
     order: "La planche la plus styl\xE9e possible"
     Wheels: 0
     Board: 0
-    Grip: 0
+  - name: Julie
+    order: Une planche sans roue
+    Wheels: 3
+    Board: 3
+  - name: Paul
+    order: "Une Longboard avec des loues adh\xE9rantes"
+    Wheels: 2
+    Board: 2
+  - name: Jean
+    order: Un skate qui rhyme avec Rapide
+    Wheels: 0
+    Board: 2
+  - name: Jack
+    order: Fait toi plaisir, je te fait confiance
+    Wheels: 3
+    Board: 3
+  - name: Bob
+    order: "La planche la plus styl\xE9e possible"
+    Wheels: 0
+    Board: 0
+  - name: Bob
+    order: "La planche la plus styl\xE9e possible"
+    Wheels: 0
+    Board: 0

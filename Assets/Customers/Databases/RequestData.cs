@@ -11,27 +11,21 @@ public class RequestData
     public string order;
     public enum WheelsChoices
     {
-        Street,
-        Cruiser,
-        Longboard,
+        Moyenne,
+        Dures,
+        Adhérentes,
+        None,
     }
     public enum BoardChoices
     {
-        Popscicle,
-        OldSchool,
+        Standard,
+        Penny,
         Longboard,
-        VeryLongboard,
-    }
-    public enum GripChoices
-    {
-        Stars,
-        Clean,
-        MiddleStrip,
+        None,
     }
          
     public RequestData.WheelsChoices Wheels;
     public RequestData.BoardChoices Board;
-    public RequestData.GripChoices Grip;
 
     public RequestData()
     {
@@ -43,11 +37,10 @@ public class RequestData
         this.name = name; 
     }
 
-    public RequestData(string name, string order, WheelsChoices Wheels, BoardChoices Board, GripChoices Grip) : this(name)
+    public RequestData(string name, string order, WheelsChoices Wheels, BoardChoices Board) : this(name)
     {
         this.order = order;
         this.Wheels = Wheels;
         this.Board = Board;
-        this.Grip = Grip;
     }
 }
