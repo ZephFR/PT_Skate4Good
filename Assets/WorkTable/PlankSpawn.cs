@@ -11,6 +11,10 @@ public class PlankSpawn : MonoBehaviour
     public Transform Truck2Spawn;
     public Holder Holder;
 
+    public Transform PlankSpawnInfoFC;
+    public Transform Truck1SpawnFC;
+    public Transform Truck2SpawnFC;
+
     public int BoardID;
 
     // Start is called before the first frame update
@@ -32,6 +36,10 @@ public class PlankSpawn : MonoBehaviour
             Holder.Plank = Instantiate(Plank, PlankSpawnInfo);
             Holder.Truck1 = Instantiate(Truck, Truck1Spawn);
             Holder.Truck2 = Instantiate(Truck, Truck2Spawn);
+
+            Holder.PlankFC = Instantiate(Plank, PlankSpawnInfoFC);
+            Holder.Truck1FC = Instantiate(Truck, Truck1SpawnFC);
+            Holder.Truck2FC = Instantiate(Truck, Truck2SpawnFC);
             Debug.Log("Item Has Spawned");
             Holder.CurrentBoard = BoardID;
         }
@@ -44,10 +52,22 @@ public class PlankSpawn : MonoBehaviour
             Destroy(Holder.WheelRef2);
             Destroy(Holder.WheelRef3);
             Destroy(Holder.WheelRef4);
-                
+
+            Destroy(Holder.PlankFC);
+            Destroy(Holder.Truck1FC);
+            Destroy(Holder.Truck2FC);
+            Destroy(Holder.WheelRef1FC);
+            Destroy(Holder.WheelRef2FC);
+            Destroy(Holder.WheelRef3FC);
+            Destroy(Holder.WheelRef4FC);
+
             Holder.Plank = Instantiate(Plank, PlankSpawnInfo);
             Holder.Truck1 = Instantiate(Truck, Truck1Spawn);
             Holder.Truck2 = Instantiate(Truck, Truck2Spawn);
+
+            Holder.PlankFC = Instantiate(Plank, PlankSpawnInfoFC);
+            Holder.Truck1FC = Instantiate(Truck, Truck1SpawnFC);
+            Holder.Truck2FC = Instantiate(Truck, Truck2SpawnFC);
             Debug.Log("Item Has Succesfully Been Replaced");
             Holder.CurrentBoard = BoardID;
         }

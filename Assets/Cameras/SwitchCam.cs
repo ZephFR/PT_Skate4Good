@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class SwitchCam : MonoBehaviour
 {
+    private Holder holder;
     public GameObject Cam1;
     public GameObject Cam2;
+    public GameObject Button;
 
     private int Manager;
+    public bool stopInteractions;
+    private bool HasPlayedOnce;
 
+    private void Update()
+    {
+        if (stopInteractions)
+        {
+            Button.SetActive(false);
+            if (!HasPlayedOnce ) 
+            {
+                GetComponent<Animator>().SetTrigger("Change");
+                HasPlayedOnce = true;
+            }
+            
+        }
 
+        else
+        {
+            Button.SetActive(true);
+        }
+    }
     public void ChangeCamera()
     {
         GetComponent<Animator>().SetTrigger("Change");
